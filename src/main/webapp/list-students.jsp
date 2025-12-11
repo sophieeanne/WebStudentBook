@@ -13,6 +13,10 @@
 <head>
     <title>Web Student Tracker</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <div id="user-info">
+        Bienvenue, ${sessionScope.username} |
+        <a href="LogoutServlet">Déconnexion</a>
+    </div>
 </head>
 <% List<Student> theStudents = (List<Student>)request.getAttribute("STUDENT_LIST"); %>
 <body>
