@@ -18,7 +18,7 @@
     <title>Web Student Book - Student View</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <div id="user-info">
-        Bienvenue, ${sessionScope.username} |
+        Welcome, ${sessionScope.username} |
         <a href="LogoutServlet">Déconnexion</a>
     </div>
 </head>

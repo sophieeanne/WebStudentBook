@@ -12,6 +12,6 @@
 </head>
 <body>
 <p>You don't have permission to access this page</p>
-<a href="StudentControllerServlet">Return to home</a>
+<a href="ViewStudentsServlet">Return to home</a>
 </body>
 </html>

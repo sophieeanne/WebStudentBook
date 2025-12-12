@@ -44,20 +44,20 @@ public class SecurityFilter implements Filter {
         // Vérifier les permissions
         boolean isInstructor = "instructor".equals(user.getRole());
 
-        // Pages réservées aux profs :
-        boolean adminPage =
-                path.contains("AddStudentServlet") ||
-                        path.contains("EditStudentServlet") ||
-                        path.contains("DeleteStudentServlet") ||
-                        path.contains("add-student.jsp") ||
-                        path.contains("edit-student.jsp");
 
-        if (adminPage && !isInstructor) {
-            res.sendRedirect("access-denied.jsp");
-            return;
+        if (!isInstructor) {
+            if (path.equals("/AddStudentServlet") ||
+                    path.equals("/EditStudentServlet") ||
+                    path.equals("/DeleteStudentServlet") ||
+                    path.equals("/add-student.jsp") ||
+                    path.equals("/edit-student.jsp") ||
+                    path.equals("/StudentControllerServlet") ||
+                    path.equals("/list-students.jsp")) {
+                res.sendRedirect("access-denied.jsp");
+                return;
+            }
         }
 
-        // Sinon -> autorisé
         chain.doFilter(request, response);
     }
 }
