@@ -20,7 +20,7 @@ public class ViewStudentsServlet extends HttpServlet {
     private StudentDBUtil studentDBUtil;
     private DataSource dataSource;
 
-    // Méthode pour obtenir le DataSource
+    // obtenir le DataSource
     private DataSource getDataSource() throws NamingException {
         String jndi = "java:comp/env/jdbc/studentdb";
         Context context = new InitialContext();
@@ -53,8 +53,6 @@ public class ViewStudentsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Pour les étudiants, on n'accepte que GET (lecture seule)
-        // On pourrait rediriger vers doGet ou afficher une erreur
         doGet(request, response);
     }
 

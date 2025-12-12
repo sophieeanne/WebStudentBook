@@ -11,14 +11,14 @@ import java.io.IOException;
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Récupérer la session actuelle
+        // récupérer la session actuelle
         HttpSession session = request.getSession(false);
         if (session != null) {
-            // Invalider la session
+            //invalider la session
             session.invalidate();
         }
 
-        // Rediriger vers la page de login
+        // rediriger vers la page de login
         response.sendRedirect("login.jsp");
     }
 }

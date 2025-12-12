@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebFilter("/*")  // Le filtre s'applique à toutes les URLs
+@WebFilter("/*")  //filtre s'applique à toutes les URLs
 public class SecurityFilter implements Filter {
 
     @Override
@@ -25,8 +25,7 @@ public class SecurityFilter implements Filter {
         boolean publicPage =
                 path.contains("/login.jsp")
                         || path.contains("LoginServlet")
-                        || path.contains("css")
-                        || path.contains("images");
+                        || path.contains("css");
 
         if (publicPage) {
             chain.doFilter(request, response);
@@ -58,7 +57,7 @@ public class SecurityFilter implements Filter {
             return;
         }
 
-        // Sinon → autorisé
+        // Sinon -> autorisé
         chain.doFilter(request, response);
     }
 }
