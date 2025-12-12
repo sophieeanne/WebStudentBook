@@ -14,7 +14,7 @@
     <title>Web Student Tracker</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <div id="user-info">
-        Bienvenue, ${sessionScope.username} |
+        Bienvenue, ${sessionScope.user.username} |
         <a href="LogoutServlet">Déconnexion</a>
     </div>
 </head>
