@@ -23,7 +23,7 @@ public class SecurityFilter implements Filter {
 
         // Pages accessibles sans login
         boolean publicPage =
-                path.equals("/login.jsp")
+                path.contains("/login.jsp")
                         || path.contains("LoginServlet")
                         || path.contains("css")
                         || path.contains("images");
