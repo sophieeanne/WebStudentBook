@@ -18,18 +18,6 @@ public class LogoutServlet extends HttpServlet {
             session.invalidate();
         }
 
-        // Supprimer le cookie "username" s'il existe
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("username")) {
-                    cookie.setMaxAge(0);
-                    response.addCookie(cookie);
-                    break;
-                }
-            }
-        }
-
         // Rediriger vers la page de login
         response.sendRedirect("login.jsp");
     }
